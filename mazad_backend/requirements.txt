@@ -1,0 +1,9 @@
+Django==6.0.7
+djangorestframework
+channels
+channels_redis
+daphne
+django-extensions
+psycopg2-binary
+Pillow
+firebase-admin

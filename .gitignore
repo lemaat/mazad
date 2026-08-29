@@ -1,0 +1,34 @@
+# Backend
+mazad_backend/venv/
+mazad_backend/.venv/
+mazad_backend/__pycache__/
+mazad_backend/**/__pycache__/
+mazad_backend/**/*.pyc
+mazad_backend/db.sqlite3
+mazad_backend/media/
+mazad_backend/.env
+mazad_backend/*.log
+mazad_backend/ws_frames.txt
+mazad_backend/ws_listener_output.txt
+
+# Mobile — Flutter/Dart
+mazad_mobile/.dart_tool/
+mazad_mobile/.flutter-plugins-dependencies
+mazad_mobile/.pub-cache/
+mazad_mobile/.pub/
+mazad_mobile/build/
+mazad_mobile/coverage/
+mazad_mobile/.idea/
+mazad_mobile/*.iml
+
+# Mobile — native secrets, never commit
+mazad_mobile/android/app/google-services.json
+mazad_mobile/android/local.properties
+mazad_mobile/android/.gradle/
+mazad_mobile/android/.kotlin/
+mazad_mobile/ios/GoogleService-Info.plist
+mazad_mobile/ios/Flutter/Generated.xcconfig
+
+# OS
+.DS_Store
+Thumbs.db

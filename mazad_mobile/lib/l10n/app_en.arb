@@ -1,0 +1,457 @@
+{
+  "@@locale": "en",
+
+  "retry": "Retry",
+  "cancel": "Cancel",
+  "signIn": "Sign in",
+  "createAccount": "Create account",
+  "required": "Required",
+  "delete": "Delete",
+  "edit": "Edit",
+  "done": "Done",
+  "couldNotReachServer": "Could not reach the server.",
+  "somethingWentWrong": "Something went wrong.",
+  "somethingWentWrongTryAgain": "Something went wrong. Please try again.",
+
+  "navFeed": "Feed",
+  "navLive": "Live",
+  "navWallet": "Wallet",
+  "navAlerts": "Alerts",
+  "navProfile": "Profile",
+  "signInToSeeNotifications": "Sign in to see notifications",
+  "createListingTooltip": "Create listing",
+
+  "phoneNumber": "Phone number",
+  "password": "Password",
+  "dontHaveAccount": "Don't have an account? ",
+  "register": "Register",
+  "accountCreated": "Account created",
+  "yourBidderNumber": "Your bidder number is:",
+  "bidderNumberSaveNote": "This is how you appear at auctions. Save it somewhere safe.",
+  "continueBtnLabel": "Continue",
+  "displayName": "Display name",
+  "displayNameHint": "Shown to other bidders",
+
+  "onboardingTitle1": "Live Auctions",
+  "onboardingBody1": "Bid on cars, real estate, and goods in real time. Watch prices update live and never miss a beat.",
+  "onboardingTitle2": "Sell with Confidence",
+  "onboardingBody2": "List your items in minutes and reach verified buyers across Mauritania.",
+  "onboardingTitle3": "Stay in the Loop",
+  "onboardingBody3": "Get notified when you're outbid, when an auction ends, or when your listing gets its first offer.",
+  "skip": "Skip",
+  "next": "Next",
+  "getStarted": "Get started",
+
+  "profile": "Profile",
+  "sectionTrading": "TRADING",
+  "myListings": "My Listings",
+  "myBids": "My Bids",
+  "saved": "Saved",
+  "addressBook": "Address Book",
+  "sectionSupport": "SUPPORT",
+  "myDisputes": "My Disputes",
+  "contactAndSupport": "Contact & Support",
+  "aboutUs": "About Us",
+  "sectionPreferences": "PREFERENCES",
+  "sectionAccount": "ACCOUNT",
+  "identityVerification": "Identity Verification",
+  "signOut": "Sign out",
+  "darkMode": "Dark mode",
+  "verifiedBadge": "Verified",
+  "pendingBadge": "Pending",
+  "signOutDialogTitle": "Sign out?",
+  "languageLabel": "Language",
+  "languageEnglish": "English",
+  "languageFrench": "Français",
+  "languageArabic": "العربية",
+
+  "searchListingsHint": "Search listings…",
+  "mazadAppBarTitle": "Mazad",
+  "categoryAll": "All",
+  "categoryCars": "Cars",
+  "categoryLand": "Land",
+  "categoryGoods": "Goods",
+  "statusLive": "Live",
+  "statusUpcoming": "Upcoming",
+  "statusPendingDecision": "Pending decision",
+  "statusSold": "Sold",
+  "statusUnsold": "Unsold",
+  "statusDraft": "Draft",
+  "statusPendingPayment": "Pending payment",
+  "statusCancelled": "Cancelled",
+  "statusBadgeLive": "LIVE",
+  "statusBadgeUpcoming": "UPCOMING",
+  "statusBadgePending": "PENDING",
+  "statusBadgeSold": "SOLD",
+  "statusBadgeUnsold": "UNSOLD",
+  "timeEnded": "Ended",
+  "timeStarted": "Started",
+  "timeHasStarted": "Has started",
+  "endsIn": "Ends in {timeLeft}",
+  "@endsIn": {
+    "placeholders": {
+      "timeLeft": { "type": "String" }
+    }
+  },
+  "startsIn": "Starts in {timeLeft}",
+  "@startsIn": {
+    "placeholders": {
+      "timeLeft": { "type": "String" }
+    }
+  },
+  "priceFrom": "From {price}",
+  "@priceFrom": {
+    "placeholders": {
+      "price": { "type": "String" }
+    }
+  },
+  "bidCountLabel": "{count, plural, one{{count} bid} other{{count} bids}}",
+  "@bidCountLabel": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "noListingsAvailable": "No listings available right now.",
+  "noListingsInCategory": "No {category} listings right now.",
+  "@noListingsInCategory": {
+    "placeholders": {
+      "category": { "type": "String" }
+    }
+  },
+
+  "currentBid": "Current bid",
+  "startingPrice": "Starting price",
+  "minimumIncrement": "Minimum increment",
+  "auctionOpens": "Auction opens",
+  "auctionCloses": "Auction closes",
+  "timeRemaining": "Time remaining",
+  "softCloseWindow": "Soft-close window",
+  "softCloseWindowValue": "{count} min",
+  "@softCloseWindowValue": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "descriptionSectionLabel": "Description",
+  "depositNote": "A refundable deposit is required to participate. Your deposit determines your maximum bid ceiling (10× your deposit).",
+  "auctionEndedDecisionRequired": "Auction ended — decision required",
+  "winningBid": "Winning bid",
+  "runnerUpBidder": "Runner-up bidder",
+  "secondChanceDeadline": "Second chance deadline",
+  "sellerReviewingResult": "The seller is reviewing the auction result.",
+  "secondChanceOfferedTitle": "Second chance offered!",
+  "yourOfferPrice": "Your offer price",
+  "expiresLabel": "Expires",
+  "endUnsoldButton": "End Unsold",
+  "secondChanceButton": "Second Chance",
+  "acceptSecondChanceButton": "Accept Second Chance",
+  "joinAuction": "Join Auction",
+  "signInToBid": "Sign in to bid",
+  "depositRequired": "Deposit Required",
+  "yourIntendedMaxBid": "Your intended maximum bid",
+  "availableBalance": "Available balance",
+  "placeDeposit": "Place Deposit — {amount}",
+  "@placeDeposit": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "enterIntendedBidAbove": "Enter your intended bid above",
+  "requiredDepositLabel": "Required deposit (1/10 of max bid)",
+  "yourBidCeiling": "Your bid ceiling",
+
+  "liveAuctions": "Live Auctions",
+  "liveNow": "LIVE NOW",
+  "comingUp": "COMING UP",
+  "noLiveOrUpcomingAuctions": "No live or upcoming auctions right now.",
+  "startingSoon": "Starting soon",
+
+  "createListingStepCategory": "Category",
+  "createListingStepDetails": "Details",
+  "createListingStepPricing": "Pricing & Schedule",
+  "idVerificationRequired": "ID Verification Required",
+  "idVerificationRequiredMessage": "{categoryName} listings require identity verification. Submit your ID to unlock this category.",
+  "@idVerificationRequiredMessage": {
+    "placeholders": {
+      "categoryName": { "type": "String" }
+    }
+  },
+  "verifyNow": "Verify Now",
+  "listingFeeDisplay": "Listing fee: {fee}",
+  "@listingFeeDisplay": {
+    "placeholders": {
+      "fee": { "type": "String" }
+    }
+  },
+  "requiresIdVerification": "Requires ID verification",
+  "nextDetails": "Next: Details",
+  "nextPricing": "Next: Pricing",
+  "reviewAndPay": "Review & Pay",
+  "creatingListing": "Creating…",
+  "titleLabel": "Title",
+  "titleHint": "e.g. 2019 Toyota Land Cruiser",
+  "descriptionLabel": "Description",
+  "descriptionHint": "Describe the item — condition, specs, any defects…",
+  "photosAddedAfterPublishing": "Photos can be added after publishing.",
+  "startingPriceMru": "Starting price (MRU)",
+  "reservePriceMru": "Reserve price (MRU)",
+  "reservePriceNote": "Hidden from bidders. Minimum you'll accept.",
+  "minBidIncrementMru": "Min bid increment (MRU)",
+  "auctionStartLabel": "Auction start",
+  "auctionEndLabel": "Auction end",
+
+  "listingFeeTitle": "Listing Fee",
+  "testModeBanner": "TEST MODE — no real charge. Sedad integration not yet wired.",
+  "listingSummaryLabel": "Listing summary",
+  "platformListingFee": "Platform listing fee",
+  "sedadProductionNote": "In production, payment will be collected via Sedad before the listing is published.",
+  "listingPublished": "Listing published!",
+  "listingPublishedBody": "\"{title}\" is now scheduled. Bidders will be able to join once the auction starts.",
+  "@listingPublishedBody": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
+  "processing": "Processing…",
+  "confirmStub": "Confirm (stub — {fee} not charged)",
+  "@confirmStub": {
+    "placeholders": {
+      "fee": { "type": "String" }
+    }
+  },
+
+  "sectionActive": "ACTIVE",
+  "sectionPending": "PENDING",
+  "sectionCompleted": "COMPLETED",
+  "noListingsYet": "You have no listings yet.",
+
+  "wallet": "Wallet",
+  "signInToViewWallet": "Sign in to view your wallet",
+  "walletBalanceWillAppear": "Your balance and active deposits will appear here.",
+  "activeDeposits": "ACTIVE DEPOSITS",
+  "totalBalance": "Total Balance",
+  "available": "Available",
+  "inDeposits": "In deposits",
+  "noActiveDeposits": "No active deposits.\nBrowse listings and join an auction to place a deposit.",
+  "bidCeilingLabel": "Bid ceiling: {amount}",
+  "@bidCeilingLabel": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+
+  "activeAuctions": "ACTIVE AUCTIONS",
+  "pastAuctions": "PAST AUCTIONS",
+  "noPlacedBids": "You haven't placed any bids yet.",
+  "myBidLabel": "My bid",
+  "currentBidShortLabel": "Current",
+  "indicatorWon": "WON",
+  "indicatorLost": "LOST",
+  "indicatorNotSold": "NOT SOLD",
+  "indicatorAwaitingSeller": "AWAITING SELLER",
+  "indicatorLeading": "LEADING",
+  "indicatorOutbid": "OUTBID",
+
+  "stepPaid": "Paid",
+  "stepShipped": "Shipped",
+  "stepDelivered": "Delivered",
+  "orderItemLabel": "Item",
+  "orderFinalPrice": "Final price",
+  "orderSellerLabel": "Seller",
+  "orderBuyerLabel": "Buyer",
+  "orderShippedLabel": "Shipped",
+  "orderDeliveredLabel": "Delivered",
+  "deliveryAddress": "Delivery Address",
+  "confirmPayment": "Confirm Payment",
+  "addDeliveryAddress": "Add Delivery Address",
+  "waitingForSellerToShip": "Waiting for seller to ship your item.",
+  "confirmReceived": "Confirm Received",
+  "orderCompleteEnjoy": "Order complete. Enjoy your item!",
+  "waitingForBuyerPayment": "Waiting for buyer to confirm payment.",
+  "waitingForBuyerAddress": "Waiting for buyer to add a delivery address.",
+  "markAsShippedButton": "Mark as Shipped",
+  "waitingForBuyerDelivery": "Waiting for buyer to confirm delivery.",
+  "orderCompleteFundsReleased": "Order complete. Funds released.",
+  "reportAProblem": "Report a problem",
+  "newAddressTitle": "New Address",
+  "selectAddressTitle": "Select Address",
+  "newAddressItem": "New address",
+  "allFieldsRequired": "All fields are required.",
+  "saveAndUseAddress": "Save & Use This Address",
+  "backToSavedAddresses": "Back to saved addresses",
+  "markAsShippedSheetTitle": "Mark as Shipped",
+  "trackingNoteOptionalSubtitle": "Optionally add a tracking number or note for the buyer.",
+  "trackingNoteHint": "Tracking note (optional)",
+  "confirmShipment": "Confirm Shipment",
+  "addressLabelHint": "Label (e.g. Home)",
+  "fullNameHint": "Full name",
+  "streetAddressHint": "Street address",
+  "cityHint": "City",
+  "phoneHint": "Phone",
+
+  "notifications": "Notifications",
+  "markAllRead": "Mark all read",
+  "allCaughtUp": "You're all caught up.",
+
+  "kycTitle": "Identity Verification",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "idFrontLabel": "ID Front",
+  "idFrontHint": "Front of your national ID card",
+  "idBackLabel": "ID Back",
+  "idBackHint": "Back of your national ID card",
+  "selfieLabel": "Selfie",
+  "selfieHint": "Hold your ID next to your face",
+  "submitForReview": "Submit for Review",
+  "kycPendingTitle": "Pending Review",
+  "kycPendingSubtitle": "Your documents have been submitted and are under review.",
+  "kycApprovedTitle": "Identity Verified",
+  "kycApprovedSubtitle": "Your identity has been confirmed. You can list Land properties.",
+  "kycRejectedTitle": "Submission Rejected",
+  "kycRejectedDefaultReason": "Your submission was rejected. Please re-submit with clearer photos.",
+  "kycNoneTitle": "Not Verified",
+  "kycNoneSubtitle": "Submit your ID and a selfie to unlock Land listings.",
+
+  "myDisputesTitle": "My Disputes",
+  "noDisputes": "You don't have any disputes.",
+  "disputeCategoryItemNotAsDescribed": "Item not as described",
+  "disputeCategoryItemNotReceived": "Item not received",
+  "disputeCategoryPaymentIssue": "Payment issue",
+  "disputeCategorySellerUnresponsive": "Seller unresponsive",
+  "disputeCategoryOther": "Other",
+  "disputeOtherParty": "Other party: #{bidderNumber}",
+  "@disputeOtherParty": {
+    "placeholders": {
+      "bidderNumber": { "type": "String" }
+    }
+  },
+  "disputeStatusOpen": "OPEN",
+  "disputeStatusUnderReview": "UNDER REVIEW",
+  "disputeStatusResolved": "RESOLVED",
+  "disputeStatusDismissed": "DISMISSED",
+
+  "reportDisputeTitle": "Report a Problem",
+  "disputeCategoryLabel": "Category",
+  "disputeDescriptionLabel": "Description",
+  "disputeDescriptionHint": "Describe the issue in detail…",
+  "disputeEvidenceLabel": "Evidence (optional)",
+  "submitDisputeButton": "Submit Dispute",
+  "selectCategoryHint": "Select a category",
+  "attachPhoto": "Attach photo",
+  "pleaseDescribeIssue": "Please describe the issue.",
+  "disputeSubmittedSnackbar": "Dispute submitted. Our team will review it shortly.",
+
+  "savedTitle": "Saved",
+  "noFavoritesYet": "You haven't saved any listings yet.",
+
+  "addressBookTitle": "Address Book",
+  "addAddress": "Add address",
+  "noAddressesYet": "You haven't saved any addresses yet.",
+  "deleteAddressTitle": "Delete address?",
+  "deleteAddressMessage": "Remove \"{label}\"?",
+  "@deleteAddressMessage": {
+    "placeholders": {
+      "label": { "type": "String" }
+    }
+  },
+  "setAsDefault": "Set as default",
+  "defaultBadge": "Default",
+  "editAddress": "Edit Address",
+  "addressLabelField": "Label",
+  "addressLabelFieldHint": "e.g. Home, Work",
+  "addressFullNameField": "Full name",
+  "addressStreetField": "Street / address",
+  "addressCityField": "City",
+  "addressCountryField": "Country",
+  "addressPhoneField": "Phone",
+  "saveChanges": "Save changes",
+
+  "aboutTitle": "About Us",
+  "aboutBody1": "Mazad is a Mauritanian online auction platform that lets users participate in live auctions and buy or sell cars, real estate, and goods with ease and transparency.",
+  "aboutBody2": "Our mission is to modernise the auction experience in Mauritania by providing a trusted digital platform that gives sellers access to more buyers and gives buyers real opportunities to get better value for their money.",
+  "aboutBody3": "Sellers create listings for items they wish to sell and set a start and end time for the auction. Interested buyers submit bids in real time, and the winner is the highest bidder when the auction closes.",
+  "appVersion": "Version 1.0.0",
+  "copyright": "© 2026 Mazad. All rights reserved.",
+
+  "contactSupportTitle": "Contact & Support",
+  "contactUs": "CONTACT US",
+  "faqSectionTitle": "FREQUENTLY ASKED QUESTIONS",
+  "faq1Question": "How do I place a bid?",
+  "faq1Answer": "Open any live auction listing and tap the \"Place Bid\" button. Enter an amount above the current highest bid and confirm. Your bid is submitted instantly.",
+  "faq2Question": "Can I cancel a bid after placing it?",
+  "faq2Answer": "Bids are binding once submitted and cannot be cancelled. Please review the listing details carefully before bidding.",
+  "faq3Question": "How do I sell an item on Mazad?",
+  "faq3Answer": "Go to the Sell tab, fill in the listing details including title, category, starting price, and auction dates, then submit. Your listing will be reviewed before going live.",
+  "faq4Question": "What payment methods are accepted?",
+  "faq4Answer": "Payment terms are agreed between buyer and seller after the auction closes. Mazad currently facilitates the auction process; direct payment integration is coming soon.",
+  "faq5Question": "What happens if I win an auction?",
+  "faq5Answer": "You will receive a notification when you win. The seller will be notified to confirm the sale. You can then coordinate delivery and payment through the order details screen.",
+  "faq6Question": "How do I verify my identity (KYC)?",
+  "faq6Answer": "Go to Profile → Identity Verification and follow the steps to upload your ID document. Verification typically takes 1–2 business days.",
+  "faq7Question": "How do I open a dispute?",
+  "faq7Answer": "If you have an issue with a completed auction, go to Profile → My Disputes and tap \"Report a Dispute\". Provide a clear description and our team will review it within 3 business days.",
+  "faq8Question": "How do I delete my account?",
+  "faq8Answer": "Contact our support team at projectestingemail@gmail.com and request account deletion. We will process it within 7 business days in accordance with applicable data protection regulations.",
+
+  "liveAuctionEndedLabel": "AUCTION ENDED",
+  "liveAuctionLiveLabel": "LIVE",
+  "reconnecting": "Reconnecting…",
+  "connectionLostRetry": "Connection lost — tap to retry",
+  "endingSoon": "ending soon",
+  "calculatingResultLabel": "calculating result…",
+  "waitingForFirstBid": "Waiting for first bid…",
+  "recentBids": "RECENT BIDS",
+  "couldntReachServer": "COULDN'T REACH THE SERVER",
+  "checkConnectionRetry": "Check your connection and try again.",
+  "youWon": "YOU WON",
+  "auctionEndedHeadline": "AUCTION ENDED",
+  "reserveNotMet": "RESERVE NOT MET",
+  "calculatingResultHeadline": "CALCULATING RESULT",
+  "finalPriceLabel": "Final price: {amount}",
+  "@finalPriceLabel": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "soldToOther": "Sold to {bidder} · {amount}",
+  "@soldToOther": {
+    "placeholders": {
+      "bidder": { "type": "String" },
+      "amount": { "type": "String" }
+    }
+  },
+  "awaitingSellerDecision": "Awaiting seller's decision",
+  "noBidsMetReserve": "No bids met the reserve",
+  "youreLeading": "You're leading",
+  "youveBeenOutbid": "You've been outbid  ·  {bidder} leads",
+  "@youveBeenOutbid": {
+    "placeholders": {
+      "bidder": { "type": "String" }
+    }
+  },
+  "noBidsYet": "No bids yet",
+  "loadingBidButton": "Loading…",
+  "bidButton": "Bid {amount}",
+  "@bidButton": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "networkError": "Network error — please try again.",
+
+  "addPhotos": "Add Photos",
+  "listingPhotosTitle": "Listing Photos",
+  "listingPhotosSubtitle": "Add up to 5 photos. The first photo will be the listing thumbnail.",
+  "addPhotoButton": "Add Photo",
+  "skipPhotos": "Skip",
+  "uploadPhotos": "Upload Photos",
+  "uploadingPhotoProgress": "Uploading {current} of {total}…",
+  "@uploadingPhotoProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "photoUploadDone": "Photos added to your listing.",
+  "maxPhotosReached": "Maximum 5 photos reached."
+}

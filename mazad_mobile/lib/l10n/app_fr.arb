@@ -1,0 +1,457 @@
+{
+  "@@locale": "fr",
+
+  "retry": "Réessayer",
+  "cancel": "Annuler",
+  "signIn": "Se connecter",
+  "createAccount": "Créer un compte",
+  "required": "Requis",
+  "delete": "Supprimer",
+  "edit": "Modifier",
+  "done": "Terminé",
+  "couldNotReachServer": "Impossible de joindre le serveur.",
+  "somethingWentWrong": "Une erreur est survenue.",
+  "somethingWentWrongTryAgain": "Une erreur est survenue. Veuillez réessayer.",
+
+  "navFeed": "Fil",
+  "navLive": "En direct",
+  "navWallet": "Portefeuille",
+  "navAlerts": "Alertes",
+  "navProfile": "Profil",
+  "signInToSeeNotifications": "Connectez-vous pour voir les notifications",
+  "createListingTooltip": "Créer une annonce",
+
+  "phoneNumber": "Numéro de téléphone",
+  "password": "Mot de passe",
+  "dontHaveAccount": "Vous n'avez pas de compte ? ",
+  "register": "S'inscrire",
+  "accountCreated": "Compte créé",
+  "yourBidderNumber": "Votre numéro d'enchérisseur est :",
+  "bidderNumberSaveNote": "C'est ainsi que vous apparaissez aux enchères. Conservez-le en lieu sûr.",
+  "continueBtnLabel": "Continuer",
+  "displayName": "Nom d'affichage",
+  "displayNameHint": "Visible par les autres enchérisseurs",
+
+  "onboardingTitle1": "Enchères en direct",
+  "onboardingBody1": "Enchérissez sur des voitures, des biens immobiliers et des marchandises en temps réel. Regardez les prix évoluer en direct et ne manquez rien.",
+  "onboardingTitle2": "Vendez en toute confiance",
+  "onboardingBody2": "Publiez vos annonces en quelques minutes et atteignez des acheteurs vérifiés en Mauritanie.",
+  "onboardingTitle3": "Restez informé",
+  "onboardingBody3": "Recevez des notifications lorsque vous êtes surenchéri, lorsqu'une enchère se termine ou lorsque votre annonce reçoit sa première offre.",
+  "skip": "Passer",
+  "next": "Suivant",
+  "getStarted": "Commencer",
+
+  "profile": "Profil",
+  "sectionTrading": "COMMERCE",
+  "myListings": "Mes annonces",
+  "myBids": "Mes offres",
+  "saved": "Enregistrés",
+  "addressBook": "Carnet d'adresses",
+  "sectionSupport": "ASSISTANCE",
+  "myDisputes": "Mes litiges",
+  "contactAndSupport": "Contact et assistance",
+  "aboutUs": "À propos",
+  "sectionPreferences": "PRÉFÉRENCES",
+  "sectionAccount": "COMPTE",
+  "identityVerification": "Vérification d'identité",
+  "signOut": "Se déconnecter",
+  "darkMode": "Mode sombre",
+  "verifiedBadge": "Vérifié",
+  "pendingBadge": "En attente",
+  "signOutDialogTitle": "Se déconnecter ?",
+  "languageLabel": "Langue",
+  "languageEnglish": "English",
+  "languageFrench": "Français",
+  "languageArabic": "العربية",
+
+  "searchListingsHint": "Rechercher des annonces…",
+  "mazadAppBarTitle": "Mazad",
+  "categoryAll": "Tous",
+  "categoryCars": "Voitures",
+  "categoryLand": "Terrains",
+  "categoryGoods": "Biens",
+  "statusLive": "En direct",
+  "statusUpcoming": "À venir",
+  "statusPendingDecision": "Décision en attente",
+  "statusSold": "Vendu",
+  "statusUnsold": "Non vendu",
+  "statusDraft": "Brouillon",
+  "statusPendingPayment": "Paiement en attente",
+  "statusCancelled": "Annulé",
+  "statusBadgeLive": "EN DIRECT",
+  "statusBadgeUpcoming": "À VENIR",
+  "statusBadgePending": "EN ATTENTE",
+  "statusBadgeSold": "VENDU",
+  "statusBadgeUnsold": "NON VENDU",
+  "timeEnded": "Terminé",
+  "timeStarted": "Commencé",
+  "timeHasStarted": "A commencé",
+  "endsIn": "Fin dans {timeLeft}",
+  "@endsIn": {
+    "placeholders": {
+      "timeLeft": { "type": "String" }
+    }
+  },
+  "startsIn": "Début dans {timeLeft}",
+  "@startsIn": {
+    "placeholders": {
+      "timeLeft": { "type": "String" }
+    }
+  },
+  "priceFrom": "À partir de {price}",
+  "@priceFrom": {
+    "placeholders": {
+      "price": { "type": "String" }
+    }
+  },
+  "bidCountLabel": "{count, plural, one{{count} offre} other{{count} offres}}",
+  "@bidCountLabel": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "noListingsAvailable": "Aucune annonce disponible pour l'instant.",
+  "noListingsInCategory": "Aucune annonce {category} pour l'instant.",
+  "@noListingsInCategory": {
+    "placeholders": {
+      "category": { "type": "String" }
+    }
+  },
+
+  "currentBid": "Offre actuelle",
+  "startingPrice": "Prix de départ",
+  "minimumIncrement": "Incrément minimum",
+  "auctionOpens": "Ouverture de l'enchère",
+  "auctionCloses": "Clôture de l'enchère",
+  "timeRemaining": "Temps restant",
+  "softCloseWindow": "Fenêtre de clôture souple",
+  "softCloseWindowValue": "{count} min",
+  "@softCloseWindowValue": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "descriptionSectionLabel": "Description",
+  "depositNote": "Un dépôt remboursable est requis pour participer. Votre dépôt détermine votre plafond d'enchère maximum (10× votre dépôt).",
+  "auctionEndedDecisionRequired": "Enchère terminée — décision requise",
+  "winningBid": "Offre gagnante",
+  "runnerUpBidder": "Deuxième enchérisseur",
+  "secondChanceDeadline": "Délai de deuxième chance",
+  "sellerReviewingResult": "Le vendeur examine le résultat de l'enchère.",
+  "secondChanceOfferedTitle": "Deuxième chance proposée !",
+  "yourOfferPrice": "Votre prix proposé",
+  "expiresLabel": "Expire le",
+  "endUnsoldButton": "Clore sans vente",
+  "secondChanceButton": "Deuxième chance",
+  "acceptSecondChanceButton": "Accepter la deuxième chance",
+  "joinAuction": "Rejoindre l'enchère",
+  "signInToBid": "Se connecter pour enchérir",
+  "depositRequired": "Dépôt requis",
+  "yourIntendedMaxBid": "Votre offre maximum souhaitée",
+  "availableBalance": "Solde disponible",
+  "placeDeposit": "Déposer la caution — {amount}",
+  "@placeDeposit": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "enterIntendedBidAbove": "Saisissez votre offre souhaitée ci-dessus",
+  "requiredDepositLabel": "Caution requise (1/10 de l'offre max)",
+  "yourBidCeiling": "Votre plafond d'enchère",
+
+  "liveAuctions": "Enchères en direct",
+  "liveNow": "EN DIRECT",
+  "comingUp": "À VENIR",
+  "noLiveOrUpcomingAuctions": "Aucune enchère en direct ou à venir pour l'instant.",
+  "startingSoon": "Bientôt",
+
+  "createListingStepCategory": "Catégorie",
+  "createListingStepDetails": "Détails",
+  "createListingStepPricing": "Prix et calendrier",
+  "idVerificationRequired": "Vérification d'identité requise",
+  "idVerificationRequiredMessage": "Les annonces {categoryName} requièrent une vérification d'identité. Soumettez votre pièce d'identité pour débloquer cette catégorie.",
+  "@idVerificationRequiredMessage": {
+    "placeholders": {
+      "categoryName": { "type": "String" }
+    }
+  },
+  "verifyNow": "Vérifier maintenant",
+  "listingFeeDisplay": "Frais d'annonce : {fee}",
+  "@listingFeeDisplay": {
+    "placeholders": {
+      "fee": { "type": "String" }
+    }
+  },
+  "requiresIdVerification": "Nécessite une vérification d'identité",
+  "nextDetails": "Suivant : Détails",
+  "nextPricing": "Suivant : Prix",
+  "reviewAndPay": "Vérifier et payer",
+  "creatingListing": "Création…",
+  "titleLabel": "Titre",
+  "titleHint": "ex. Toyota Land Cruiser 2019",
+  "descriptionLabel": "Description",
+  "descriptionHint": "Décrivez l'article — état, caractéristiques, défauts éventuels…",
+  "photosAddedAfterPublishing": "Les photos peuvent être ajoutées après la publication.",
+  "startingPriceMru": "Prix de départ (MRU)",
+  "reservePriceMru": "Prix de réserve (MRU)",
+  "reservePriceNote": "Masqué aux enchérisseurs. Minimum que vous acceptez.",
+  "minBidIncrementMru": "Incrément min. (MRU)",
+  "auctionStartLabel": "Début de l'enchère",
+  "auctionEndLabel": "Fin de l'enchère",
+
+  "listingFeeTitle": "Frais d'annonce",
+  "testModeBanner": "MODE TEST — aucun frais réel. L'intégration Sedad n'est pas encore active.",
+  "listingSummaryLabel": "Résumé de l'annonce",
+  "platformListingFee": "Frais d'annonce de la plateforme",
+  "sedadProductionNote": "En production, le paiement sera collecté via Sedad avant la publication de l'annonce.",
+  "listingPublished": "Annonce publiée !",
+  "listingPublishedBody": "« {title} » est maintenant programmé. Les enchérisseurs pourront rejoindre une fois l'enchère lancée.",
+  "@listingPublishedBody": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
+  "processing": "Traitement…",
+  "confirmStub": "Confirmer (test — {fee} non débité)",
+  "@confirmStub": {
+    "placeholders": {
+      "fee": { "type": "String" }
+    }
+  },
+
+  "sectionActive": "ACTIF",
+  "sectionPending": "EN ATTENTE",
+  "sectionCompleted": "TERMINÉ",
+  "noListingsYet": "Vous n'avez pas encore d'annonces.",
+
+  "wallet": "Portefeuille",
+  "signInToViewWallet": "Connectez-vous pour voir votre portefeuille",
+  "walletBalanceWillAppear": "Votre solde et vos dépôts actifs apparaîtront ici.",
+  "activeDeposits": "DÉPÔTS ACTIFS",
+  "totalBalance": "Solde total",
+  "available": "Disponible",
+  "inDeposits": "En dépôts",
+  "noActiveDeposits": "Aucun dépôt actif.\nParcourez les annonces et rejoignez une enchère pour déposer une caution.",
+  "bidCeilingLabel": "Plafond d'enchère : {amount}",
+  "@bidCeilingLabel": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+
+  "activeAuctions": "ENCHÈRES ACTIVES",
+  "pastAuctions": "ENCHÈRES PASSÉES",
+  "noPlacedBids": "Vous n'avez pas encore placé d'offres.",
+  "myBidLabel": "Mon offre",
+  "currentBidShortLabel": "Actuelle",
+  "indicatorWon": "GAGNÉ",
+  "indicatorLost": "PERDU",
+  "indicatorNotSold": "NON VENDU",
+  "indicatorAwaitingSeller": "EN ATTENTE VENDEUR",
+  "indicatorLeading": "EN TÊTE",
+  "indicatorOutbid": "SURENCHÉRI",
+
+  "stepPaid": "Payé",
+  "stepShipped": "Expédié",
+  "stepDelivered": "Livré",
+  "orderItemLabel": "Article",
+  "orderFinalPrice": "Prix final",
+  "orderSellerLabel": "Vendeur",
+  "orderBuyerLabel": "Acheteur",
+  "orderShippedLabel": "Expédié",
+  "orderDeliveredLabel": "Livré",
+  "deliveryAddress": "Adresse de livraison",
+  "confirmPayment": "Confirmer le paiement",
+  "addDeliveryAddress": "Ajouter une adresse de livraison",
+  "waitingForSellerToShip": "En attente d'expédition par le vendeur.",
+  "confirmReceived": "Confirmer la réception",
+  "orderCompleteEnjoy": "Commande complète. Profitez de votre article !",
+  "waitingForBuyerPayment": "En attente de confirmation du paiement par l'acheteur.",
+  "waitingForBuyerAddress": "En attente de l'ajout d'une adresse de livraison par l'acheteur.",
+  "markAsShippedButton": "Marquer comme expédié",
+  "waitingForBuyerDelivery": "En attente de confirmation de livraison par l'acheteur.",
+  "orderCompleteFundsReleased": "Commande complète. Fonds libérés.",
+  "reportAProblem": "Signaler un problème",
+  "newAddressTitle": "Nouvelle adresse",
+  "selectAddressTitle": "Sélectionner une adresse",
+  "newAddressItem": "Nouvelle adresse",
+  "allFieldsRequired": "Tous les champs sont obligatoires.",
+  "saveAndUseAddress": "Enregistrer et utiliser cette adresse",
+  "backToSavedAddresses": "Retour aux adresses enregistrées",
+  "markAsShippedSheetTitle": "Marquer comme expédié",
+  "trackingNoteOptionalSubtitle": "Ajoutez optionnellement un numéro de suivi ou une note pour l'acheteur.",
+  "trackingNoteHint": "Note de suivi (facultatif)",
+  "confirmShipment": "Confirmer l'expédition",
+  "addressLabelHint": "Étiquette (ex. Domicile)",
+  "fullNameHint": "Nom complet",
+  "streetAddressHint": "Adresse",
+  "cityHint": "Ville",
+  "phoneHint": "Téléphone",
+
+  "notifications": "Notifications",
+  "markAllRead": "Tout marquer comme lu",
+  "allCaughtUp": "Vous êtes à jour.",
+
+  "kycTitle": "Vérification d'identité",
+  "camera": "Caméra",
+  "gallery": "Galerie",
+  "idFrontLabel": "Recto de la pièce d'identité",
+  "idFrontHint": "Recto de votre carte d'identité nationale",
+  "idBackLabel": "Verso de la pièce d'identité",
+  "idBackHint": "Verso de votre carte d'identité nationale",
+  "selfieLabel": "Selfie",
+  "selfieHint": "Tenez votre pièce d'identité à côté de votre visage",
+  "submitForReview": "Soumettre pour révision",
+  "kycPendingTitle": "En cours de révision",
+  "kycPendingSubtitle": "Vos documents ont été soumis et sont en cours d'examen.",
+  "kycApprovedTitle": "Identité vérifiée",
+  "kycApprovedSubtitle": "Votre identité a été confirmée. Vous pouvez publier des annonces de terrains.",
+  "kycRejectedTitle": "Soumission rejetée",
+  "kycRejectedDefaultReason": "Votre soumission a été rejetée. Veuillez resoumettre avec des photos plus claires.",
+  "kycNoneTitle": "Non vérifié",
+  "kycNoneSubtitle": "Soumettez votre pièce d'identité et un selfie pour débloquer les annonces de terrains.",
+
+  "myDisputesTitle": "Mes litiges",
+  "noDisputes": "Vous n'avez aucun litige.",
+  "disputeCategoryItemNotAsDescribed": "Article non conforme à la description",
+  "disputeCategoryItemNotReceived": "Article non reçu",
+  "disputeCategoryPaymentIssue": "Problème de paiement",
+  "disputeCategorySellerUnresponsive": "Vendeur non réactif",
+  "disputeCategoryOther": "Autre",
+  "disputeOtherParty": "Autre partie : #{bidderNumber}",
+  "@disputeOtherParty": {
+    "placeholders": {
+      "bidderNumber": { "type": "String" }
+    }
+  },
+  "disputeStatusOpen": "OUVERT",
+  "disputeStatusUnderReview": "EN RÉVISION",
+  "disputeStatusResolved": "RÉSOLU",
+  "disputeStatusDismissed": "REJETÉ",
+
+  "reportDisputeTitle": "Signaler un problème",
+  "disputeCategoryLabel": "Catégorie",
+  "disputeDescriptionLabel": "Description",
+  "disputeDescriptionHint": "Décrivez le problème en détail…",
+  "disputeEvidenceLabel": "Preuves (facultatif)",
+  "submitDisputeButton": "Soumettre le litige",
+  "selectCategoryHint": "Sélectionner une catégorie",
+  "attachPhoto": "Joindre une photo",
+  "pleaseDescribeIssue": "Veuillez décrire le problème.",
+  "disputeSubmittedSnackbar": "Litige soumis. Notre équipe l'examinera sous peu.",
+
+  "savedTitle": "Enregistrés",
+  "noFavoritesYet": "Vous n'avez pas encore enregistré d'annonces.",
+
+  "addressBookTitle": "Carnet d'adresses",
+  "addAddress": "Ajouter une adresse",
+  "noAddressesYet": "Vous n'avez pas encore d'adresses enregistrées.",
+  "deleteAddressTitle": "Supprimer l'adresse ?",
+  "deleteAddressMessage": "Supprimer « {label} » ?",
+  "@deleteAddressMessage": {
+    "placeholders": {
+      "label": { "type": "String" }
+    }
+  },
+  "setAsDefault": "Définir par défaut",
+  "defaultBadge": "Par défaut",
+  "editAddress": "Modifier l'adresse",
+  "addressLabelField": "Étiquette",
+  "addressLabelFieldHint": "ex. Domicile, Travail",
+  "addressFullNameField": "Nom complet",
+  "addressStreetField": "Rue / adresse",
+  "addressCityField": "Ville",
+  "addressCountryField": "Pays",
+  "addressPhoneField": "Téléphone",
+  "saveChanges": "Enregistrer les modifications",
+
+  "aboutTitle": "À propos",
+  "aboutBody1": "Mazad est une plateforme d'enchères en ligne mauritanienne qui permet aux utilisateurs de participer à des enchères en direct et d'acheter ou de vendre des voitures, des biens immobiliers et des marchandises en toute facilité et transparence.",
+  "aboutBody2": "Notre mission est de moderniser l'expérience des enchères en Mauritanie en proposant une plateforme numérique fiable qui offre aux vendeurs un accès à davantage d'acheteurs et aux acheteurs de réelles opportunités d'obtenir une meilleure valeur pour leur argent.",
+  "aboutBody3": "Les vendeurs créent des annonces pour les articles qu'ils souhaitent vendre et définissent une heure de début et de fin pour l'enchère. Les acheteurs intéressés soumettent des offres en temps réel, et le gagnant est l'enchérisseur le plus offrant à la clôture de l'enchère.",
+  "appVersion": "Version 1.0.0",
+  "copyright": "© 2026 Mazad. Tous droits réservés.",
+
+  "contactSupportTitle": "Contact et assistance",
+  "contactUs": "NOUS CONTACTER",
+  "faqSectionTitle": "QUESTIONS FRÉQUENTES",
+  "faq1Question": "Comment placer une offre ?",
+  "faq1Answer": "Ouvrez n'importe quelle annonce d'enchère en direct et appuyez sur le bouton « Placer une offre ». Saisissez un montant supérieur à l'offre la plus élevée actuelle et confirmez. Votre offre est soumise instantanément.",
+  "faq2Question": "Puis-je annuler une offre après l'avoir placée ?",
+  "faq2Answer": "Les offres sont contraignantes une fois soumises et ne peuvent pas être annulées. Veuillez examiner attentivement les détails de l'annonce avant d'enchérir.",
+  "faq3Question": "Comment vendre un article sur Mazad ?",
+  "faq3Answer": "Accédez à l'onglet Vendre, remplissez les détails de l'annonce incluant le titre, la catégorie, le prix de départ et les dates de l'enchère, puis soumettez. Votre annonce sera examinée avant d'être mise en ligne.",
+  "faq4Question": "Quels modes de paiement sont acceptés ?",
+  "faq4Answer": "Les modalités de paiement sont convenues entre l'acheteur et le vendeur après la clôture de l'enchère. Mazad facilite actuellement le processus d'enchère ; l'intégration directe du paiement sera disponible prochainement.",
+  "faq5Question": "Que se passe-t-il si je remporte une enchère ?",
+  "faq5Answer": "Vous recevrez une notification lorsque vous gagnez. Le vendeur sera notifié pour confirmer la vente. Vous pourrez ensuite coordonner la livraison et le paiement via l'écran de détails de la commande.",
+  "faq6Question": "Comment vérifier mon identité (KYC) ?",
+  "faq6Answer": "Accédez à Profil → Vérification d'identité et suivez les étapes pour télécharger votre pièce d'identité. La vérification prend généralement 1 à 2 jours ouvrables.",
+  "faq7Question": "Comment ouvrir un litige ?",
+  "faq7Answer": "Si vous avez un problème avec une enchère terminée, accédez à Profil → Mes litiges et appuyez sur « Signaler un litige ». Fournissez une description claire et notre équipe l'examinera dans les 3 jours ouvrables.",
+  "faq8Question": "Comment supprimer mon compte ?",
+  "faq8Answer": "Contactez notre équipe d'assistance à projectestingemail@gmail.com et demandez la suppression du compte. Nous le traiterons dans les 7 jours ouvrables conformément aux réglementations applicables en matière de protection des données.",
+
+  "liveAuctionEndedLabel": "ENCHÈRE TERMINÉE",
+  "liveAuctionLiveLabel": "EN DIRECT",
+  "reconnecting": "Reconnexion…",
+  "connectionLostRetry": "Connexion perdue — appuyez pour réessayer",
+  "endingSoon": "se termine bientôt",
+  "calculatingResultLabel": "calcul du résultat…",
+  "waitingForFirstBid": "En attente de la première offre…",
+  "recentBids": "OFFRES RÉCENTES",
+  "couldntReachServer": "IMPOSSIBLE DE JOINDRE LE SERVEUR",
+  "checkConnectionRetry": "Vérifiez votre connexion et réessayez.",
+  "youWon": "VOUS AVEZ GAGNÉ",
+  "auctionEndedHeadline": "ENCHÈRE TERMINÉE",
+  "reserveNotMet": "RÉSERVE NON ATTEINTE",
+  "calculatingResultHeadline": "CALCUL DU RÉSULTAT",
+  "finalPriceLabel": "Prix final : {amount}",
+  "@finalPriceLabel": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "soldToOther": "Vendu à {bidder} · {amount}",
+  "@soldToOther": {
+    "placeholders": {
+      "bidder": { "type": "String" },
+      "amount": { "type": "String" }
+    }
+  },
+  "awaitingSellerDecision": "En attente de la décision du vendeur",
+  "noBidsMetReserve": "Aucune offre n'a atteint la réserve",
+  "youreLeading": "Vous êtes en tête",
+  "youveBeenOutbid": "Vous avez été surenchéri  ·  {bidder} mène",
+  "@youveBeenOutbid": {
+    "placeholders": {
+      "bidder": { "type": "String" }
+    }
+  },
+  "noBidsYet": "Aucune offre pour l'instant",
+  "loadingBidButton": "Chargement…",
+  "bidButton": "Offrir {amount}",
+  "@bidButton": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "networkError": "Erreur réseau — veuillez réessayer.",
+
+  "addPhotos": "Ajouter des photos",
+  "listingPhotosTitle": "Photos de l'annonce",
+  "listingPhotosSubtitle": "Ajoutez jusqu'à 5 photos. La première photo sera la miniature de l'annonce.",
+  "addPhotoButton": "Ajouter une photo",
+  "skipPhotos": "Passer",
+  "uploadPhotos": "Télécharger les photos",
+  "uploadingPhotoProgress": "Téléchargement {current} sur {total}…",
+  "@uploadingPhotoProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "photoUploadDone": "Photos ajoutées à votre annonce.",
+  "maxPhotosReached": "Limite de 5 photos atteinte."
+}

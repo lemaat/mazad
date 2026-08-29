@@ -1,0 +1,457 @@
+{
+  "@@locale": "ar",
+
+  "retry": "إعادة المحاولة",
+  "cancel": "إلغاء",
+  "signIn": "تسجيل الدخول",
+  "createAccount": "إنشاء حساب",
+  "required": "مطلوب",
+  "delete": "حذف",
+  "edit": "تعديل",
+  "done": "تم",
+  "couldNotReachServer": "تعذّر الوصول إلى الخادم.",
+  "somethingWentWrong": "حدث خطأ ما.",
+  "somethingWentWrongTryAgain": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+
+  "navFeed": "الرئيسية",
+  "navLive": "مباشر",
+  "navWallet": "المحفظة",
+  "navAlerts": "التنبيهات",
+  "navProfile": "الملف",
+  "signInToSeeNotifications": "سجّل الدخول لعرض الإشعارات",
+  "createListingTooltip": "إنشاء إعلان",
+
+  "phoneNumber": "رقم الهاتف",
+  "password": "كلمة المرور",
+  "dontHaveAccount": "ليس لديك حساب؟ ",
+  "register": "سجّل",
+  "accountCreated": "تم إنشاء الحساب",
+  "yourBidderNumber": "رقم المزايد الخاص بك:",
+  "bidderNumberSaveNote": "هكذا تظهر في المزادات. احتفظ به في مكان آمن.",
+  "continueBtnLabel": "متابعة",
+  "displayName": "الاسم المعروض",
+  "displayNameHint": "يظهر للمزايدين الآخرين",
+
+  "onboardingTitle1": "مزادات مباشرة",
+  "onboardingBody1": "زايد على السيارات والعقارات والبضائع في الوقت الفعلي. شاهد الأسعار تتحدّث مباشرةً ولا تفوّت أي لحظة.",
+  "onboardingTitle2": "بع بثقة",
+  "onboardingBody2": "انشر إعلاناتك في دقائق وتواصل مع مشترين موثّقين في موريتانيا.",
+  "onboardingTitle3": "ابقَ على اطلاع",
+  "onboardingBody3": "احصل على إشعارات عند تجاوز عرضك، أو عند انتهاء مزاد، أو عند تلقّي إعلانك أول عرض.",
+  "skip": "تخطّ",
+  "next": "التالي",
+  "getStarted": "ابدأ الآن",
+
+  "profile": "الملف الشخصي",
+  "sectionTrading": "التداول",
+  "myListings": "إعلاناتي",
+  "myBids": "عروضي",
+  "saved": "المحفوظات",
+  "addressBook": "دفتر العناوين",
+  "sectionSupport": "الدعم",
+  "myDisputes": "نزاعاتي",
+  "contactAndSupport": "التواصل والدعم",
+  "aboutUs": "عن التطبيق",
+  "sectionPreferences": "التفضيلات",
+  "sectionAccount": "الحساب",
+  "identityVerification": "التحقق من الهوية",
+  "signOut": "تسجيل الخروج",
+  "darkMode": "الوضع الليلي",
+  "verifiedBadge": "موثّق",
+  "pendingBadge": "قيد الانتظار",
+  "signOutDialogTitle": "تسجيل الخروج؟",
+  "languageLabel": "اللغة",
+  "languageEnglish": "English",
+  "languageFrench": "Français",
+  "languageArabic": "العربية",
+
+  "searchListingsHint": "البحث في الإعلانات…",
+  "mazadAppBarTitle": "مزاد",
+  "categoryAll": "الكل",
+  "categoryCars": "سيارات",
+  "categoryLand": "أراضي",
+  "categoryGoods": "بضائع",
+  "statusLive": "مباشر",
+  "statusUpcoming": "قادم",
+  "statusPendingDecision": "قيد القرار",
+  "statusSold": "مُباع",
+  "statusUnsold": "غير مُباع",
+  "statusDraft": "مسودة",
+  "statusPendingPayment": "في انتظار الدفع",
+  "statusCancelled": "ملغى",
+  "statusBadgeLive": "مباشر",
+  "statusBadgeUpcoming": "قادم",
+  "statusBadgePending": "قيد الانتظار",
+  "statusBadgeSold": "مُباع",
+  "statusBadgeUnsold": "غير مُباع",
+  "timeEnded": "انتهى",
+  "timeStarted": "بدأ",
+  "timeHasStarted": "بدأ",
+  "endsIn": "ينتهي خلال {timeLeft}",
+  "@endsIn": {
+    "placeholders": {
+      "timeLeft": { "type": "String" }
+    }
+  },
+  "startsIn": "يبدأ خلال {timeLeft}",
+  "@startsIn": {
+    "placeholders": {
+      "timeLeft": { "type": "String" }
+    }
+  },
+  "priceFrom": "ابتداءً من {price}",
+  "@priceFrom": {
+    "placeholders": {
+      "price": { "type": "String" }
+    }
+  },
+  "bidCountLabel": "{count, plural, zero{لا عروض} one{عرض واحد} two{عرضان} few{{count} عروض} many{{count} عرضاً} other{{count} عرض}}",
+  "@bidCountLabel": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "noListingsAvailable": "لا توجد إعلانات متاحة الآن.",
+  "noListingsInCategory": "لا توجد إعلانات {category} الآن.",
+  "@noListingsInCategory": {
+    "placeholders": {
+      "category": { "type": "String" }
+    }
+  },
+
+  "currentBid": "العرض الحالي",
+  "startingPrice": "السعر الابتدائي",
+  "minimumIncrement": "الحد الأدنى للزيادة",
+  "auctionOpens": "بداية المزاد",
+  "auctionCloses": "نهاية المزاد",
+  "timeRemaining": "الوقت المتبقي",
+  "softCloseWindow": "نافذة الإغلاق المرن",
+  "softCloseWindowValue": "{count} دقيقة",
+  "@softCloseWindowValue": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "descriptionSectionLabel": "الوصف",
+  "depositNote": "يُشترط دفع وديعة قابلة للاسترداد للمشاركة. تُحدّد وديعتك سقف عرضك الأقصى (10× الوديعة).",
+  "auctionEndedDecisionRequired": "انتهى المزاد — مطلوب اتخاذ قرار",
+  "winningBid": "العرض الفائز",
+  "runnerUpBidder": "المزايد التالي",
+  "secondChanceDeadline": "الموعد النهائي للفرصة الثانية",
+  "sellerReviewingResult": "البائع يراجع نتيجة المزاد.",
+  "secondChanceOfferedTitle": "فرصة ثانية متاحة!",
+  "yourOfferPrice": "سعر عرضك",
+  "expiresLabel": "تنتهي في",
+  "endUnsoldButton": "إغلاق بدون بيع",
+  "secondChanceButton": "فرصة ثانية",
+  "acceptSecondChanceButton": "قبول الفرصة الثانية",
+  "joinAuction": "المشاركة في المزاد",
+  "signInToBid": "سجّل الدخول للمزايدة",
+  "depositRequired": "الوديعة مطلوبة",
+  "yourIntendedMaxBid": "عرضك الأقصى المقصود",
+  "availableBalance": "الرصيد المتاح",
+  "placeDeposit": "دفع الوديعة — {amount}",
+  "@placeDeposit": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "enterIntendedBidAbove": "أدخل عرضك المقصود أعلاه",
+  "requiredDepositLabel": "الوديعة المطلوبة (1/10 من الحد الأقصى)",
+  "yourBidCeiling": "سقف عرضك",
+
+  "liveAuctions": "المزادات المباشرة",
+  "liveNow": "مباشر الآن",
+  "comingUp": "قادم",
+  "noLiveOrUpcomingAuctions": "لا توجد مزادات مباشرة أو قادمة الآن.",
+  "startingSoon": "يبدأ قريباً",
+
+  "createListingStepCategory": "الفئة",
+  "createListingStepDetails": "التفاصيل",
+  "createListingStepPricing": "السعر والجدول الزمني",
+  "idVerificationRequired": "التحقق من الهوية مطلوب",
+  "idVerificationRequiredMessage": "إعلانات {categoryName} تستلزم التحقق من الهوية. أرسل هويتك لفتح هذه الفئة.",
+  "@idVerificationRequiredMessage": {
+    "placeholders": {
+      "categoryName": { "type": "String" }
+    }
+  },
+  "verifyNow": "تحقق الآن",
+  "listingFeeDisplay": "رسوم الإعلان: {fee}",
+  "@listingFeeDisplay": {
+    "placeholders": {
+      "fee": { "type": "String" }
+    }
+  },
+  "requiresIdVerification": "يتطلب التحقق من الهوية",
+  "nextDetails": "التالي: التفاصيل",
+  "nextPricing": "التالي: السعر",
+  "reviewAndPay": "مراجعة والدفع",
+  "creatingListing": "جارٍ الإنشاء…",
+  "titleLabel": "العنوان",
+  "titleHint": "مثال: تويوتا لاند كروزر 2019",
+  "descriptionLabel": "الوصف",
+  "descriptionHint": "صف المنتج — الحالة، المواصفات، أي عيوب…",
+  "photosAddedAfterPublishing": "يمكن إضافة الصور بعد النشر.",
+  "startingPriceMru": "السعر الابتدائي (أوقية)",
+  "reservePriceMru": "سعر الاحتياطي (أوقية)",
+  "reservePriceNote": "مخفي عن المزايدين. الحد الأدنى الذي تقبله.",
+  "minBidIncrementMru": "الحد الأدنى للزيادة (أوقية)",
+  "auctionStartLabel": "بداية المزاد",
+  "auctionEndLabel": "نهاية المزاد",
+
+  "listingFeeTitle": "رسوم الإعلان",
+  "testModeBanner": "وضع التجربة — لا توجد رسوم حقيقية. تكامل سداد غير مفعّل بعد.",
+  "listingSummaryLabel": "ملخص الإعلان",
+  "platformListingFee": "رسوم إعلان المنصة",
+  "sedadProductionNote": "في الإنتاج، سيتم تحصيل الدفع عبر سداد قبل نشر الإعلان.",
+  "listingPublished": "تم نشر الإعلان!",
+  "listingPublishedBody": "تمت جدولة «{title}». سيتمكن المزايدون من الانضمام بمجرد بدء المزاد.",
+  "@listingPublishedBody": {
+    "placeholders": {
+      "title": { "type": "String" }
+    }
+  },
+  "processing": "جارٍ المعالجة…",
+  "confirmStub": "تأكيد (تجريبي — {fee} غير محصّلة)",
+  "@confirmStub": {
+    "placeholders": {
+      "fee": { "type": "String" }
+    }
+  },
+
+  "sectionActive": "نشط",
+  "sectionPending": "قيد الانتظار",
+  "sectionCompleted": "مكتمل",
+  "noListingsYet": "ليس لديك إعلانات بعد.",
+
+  "wallet": "المحفظة",
+  "signInToViewWallet": "سجّل الدخول لعرض محفظتك",
+  "walletBalanceWillAppear": "سيظهر رصيدك والودائع النشطة هنا.",
+  "activeDeposits": "الودائع النشطة",
+  "totalBalance": "الرصيد الإجمالي",
+  "available": "المتاح",
+  "inDeposits": "في الودائع",
+  "noActiveDeposits": "لا توجد ودائع نشطة.\nتصفّح الإعلانات وانضم إلى مزاد لدفع وديعة.",
+  "bidCeilingLabel": "سقف العرض: {amount}",
+  "@bidCeilingLabel": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+
+  "activeAuctions": "المزادات النشطة",
+  "pastAuctions": "المزادات السابقة",
+  "noPlacedBids": "لم تضع أي عروض بعد.",
+  "myBidLabel": "عرضي",
+  "currentBidShortLabel": "الحالي",
+  "indicatorWon": "فزت",
+  "indicatorLost": "خسرت",
+  "indicatorNotSold": "غير مُباع",
+  "indicatorAwaitingSeller": "بانتظار البائع",
+  "indicatorLeading": "في الصدارة",
+  "indicatorOutbid": "تم تجاوزك",
+
+  "stepPaid": "مدفوع",
+  "stepShipped": "تم الشحن",
+  "stepDelivered": "تم التسليم",
+  "orderItemLabel": "المنتج",
+  "orderFinalPrice": "السعر النهائي",
+  "orderSellerLabel": "البائع",
+  "orderBuyerLabel": "المشتري",
+  "orderShippedLabel": "تاريخ الشحن",
+  "orderDeliveredLabel": "تاريخ التسليم",
+  "deliveryAddress": "عنوان التسليم",
+  "confirmPayment": "تأكيد الدفع",
+  "addDeliveryAddress": "إضافة عنوان التسليم",
+  "waitingForSellerToShip": "في انتظار شحن المنتج من البائع.",
+  "confirmReceived": "تأكيد الاستلام",
+  "orderCompleteEnjoy": "اكتملت الطلبية. استمتع بمنتجك!",
+  "waitingForBuyerPayment": "في انتظار تأكيد الدفع من المشتري.",
+  "waitingForBuyerAddress": "في انتظار إضافة عنوان التسليم من المشتري.",
+  "markAsShippedButton": "تعليم كمشحون",
+  "waitingForBuyerDelivery": "في انتظار تأكيد الاستلام من المشتري.",
+  "orderCompleteFundsReleased": "اكتملت الطلبية. تم تحرير الأموال.",
+  "reportAProblem": "الإبلاغ عن مشكلة",
+  "newAddressTitle": "عنوان جديد",
+  "selectAddressTitle": "اختر عنواناً",
+  "newAddressItem": "عنوان جديد",
+  "allFieldsRequired": "جميع الحقول مطلوبة.",
+  "saveAndUseAddress": "حفظ واستخدام هذا العنوان",
+  "backToSavedAddresses": "العودة إلى العناوين المحفوظة",
+  "markAsShippedSheetTitle": "تعليم كمشحون",
+  "trackingNoteOptionalSubtitle": "أضف اختيارياً رقم تتبع أو ملاحظة للمشتري.",
+  "trackingNoteHint": "ملاحظة التتبع (اختياري)",
+  "confirmShipment": "تأكيد الشحن",
+  "addressLabelHint": "التسمية (مثال: المنزل)",
+  "fullNameHint": "الاسم الكامل",
+  "streetAddressHint": "الشارع / العنوان",
+  "cityHint": "المدينة",
+  "phoneHint": "الهاتف",
+
+  "notifications": "الإشعارات",
+  "markAllRead": "تعليم الكل كمقروء",
+  "allCaughtUp": "لقد اطّلعت على كل شيء.",
+
+  "kycTitle": "التحقق من الهوية",
+  "camera": "الكاميرا",
+  "gallery": "المعرض",
+  "idFrontLabel": "وجه الهوية",
+  "idFrontHint": "الوجه الأمامي لبطاقة هويتك الوطنية",
+  "idBackLabel": "ظهر الهوية",
+  "idBackHint": "الوجه الخلفي لبطاقة هويتك الوطنية",
+  "selfieLabel": "صورة سيلفي",
+  "selfieHint": "أمسك بطاقة هويتك بجانب وجهك",
+  "submitForReview": "إرسال للمراجعة",
+  "kycPendingTitle": "قيد المراجعة",
+  "kycPendingSubtitle": "تم إرسال مستنداتك وهي قيد المراجعة.",
+  "kycApprovedTitle": "تم التحقق من الهوية",
+  "kycApprovedSubtitle": "تم تأكيد هويتك. يمكنك الآن نشر إعلانات الأراضي.",
+  "kycRejectedTitle": "تم رفض الطلب",
+  "kycRejectedDefaultReason": "تم رفض طلبك. يرجى إعادة الإرسال بصور أوضح.",
+  "kycNoneTitle": "غير موثّق",
+  "kycNoneSubtitle": "أرسل هويتك وصورة سيلفي لفتح إعلانات الأراضي.",
+
+  "myDisputesTitle": "نزاعاتي",
+  "noDisputes": "ليس لديك أي نزاعات.",
+  "disputeCategoryItemNotAsDescribed": "المنتج غير مطابق للوصف",
+  "disputeCategoryItemNotReceived": "لم يُستلم المنتج",
+  "disputeCategoryPaymentIssue": "مشكلة في الدفع",
+  "disputeCategorySellerUnresponsive": "البائع لا يستجيب",
+  "disputeCategoryOther": "أخرى",
+  "disputeOtherParty": "الطرف الآخر: #{bidderNumber}",
+  "@disputeOtherParty": {
+    "placeholders": {
+      "bidderNumber": { "type": "String" }
+    }
+  },
+  "disputeStatusOpen": "مفتوح",
+  "disputeStatusUnderReview": "قيد المراجعة",
+  "disputeStatusResolved": "محلول",
+  "disputeStatusDismissed": "مرفوض",
+
+  "reportDisputeTitle": "الإبلاغ عن مشكلة",
+  "disputeCategoryLabel": "الفئة",
+  "disputeDescriptionLabel": "الوصف",
+  "disputeDescriptionHint": "صف المشكلة بالتفصيل…",
+  "disputeEvidenceLabel": "الأدلة (اختياري)",
+  "submitDisputeButton": "إرسال النزاع",
+  "selectCategoryHint": "اختر فئة",
+  "attachPhoto": "إرفاق صورة",
+  "pleaseDescribeIssue": "يرجى وصف المشكلة.",
+  "disputeSubmittedSnackbar": "تم إرسال النزاع. سيراجعه فريقنا قريباً.",
+
+  "savedTitle": "المحفوظات",
+  "noFavoritesYet": "لم تحفظ أي إعلانات بعد.",
+
+  "addressBookTitle": "دفتر العناوين",
+  "addAddress": "إضافة عنوان",
+  "noAddressesYet": "لم تحفظ أي عناوين بعد.",
+  "deleteAddressTitle": "حذف العنوان؟",
+  "deleteAddressMessage": "إزالة «{label}»؟",
+  "@deleteAddressMessage": {
+    "placeholders": {
+      "label": { "type": "String" }
+    }
+  },
+  "setAsDefault": "تعيين كافتراضي",
+  "defaultBadge": "افتراضي",
+  "editAddress": "تعديل العنوان",
+  "addressLabelField": "التسمية",
+  "addressLabelFieldHint": "مثال: المنزل، العمل",
+  "addressFullNameField": "الاسم الكامل",
+  "addressStreetField": "الشارع / العنوان",
+  "addressCityField": "المدينة",
+  "addressCountryField": "الدولة",
+  "addressPhoneField": "الهاتف",
+  "saveChanges": "حفظ التغييرات",
+
+  "aboutTitle": "عن التطبيق",
+  "aboutBody1": "مزاد منصة مزادات إلكترونية موريتانية تتيح للمستخدمين المشاركة في المزادات المباشرة وشراء أو بيع السيارات والعقارات والبضائع بسهولة وشفافية.",
+  "aboutBody2": "مهمتنا تحديث تجربة المزادات في موريتانيا من خلال توفير منصة رقمية موثوقة تمنح البائعين وصولاً إلى مزيد من المشترين، وتمنح المشترين فرصاً حقيقية للحصول على قيمة أفضل لأموالهم.",
+  "aboutBody3": "يُنشئ البائعون إعلانات للمنتجات التي يرغبون في بيعها ويحددون وقت بدء المزاد ونهايته. يقدّم المشترون المهتمون عروضهم في الوقت الفعلي، والفائز هو أعلى مزايد عند إغلاق المزاد.",
+  "appVersion": "الإصدار 1.0.0",
+  "copyright": "© 2026 مزاد. جميع الحقوق محفوظة.",
+
+  "contactSupportTitle": "التواصل والدعم",
+  "contactUs": "تواصل معنا",
+  "faqSectionTitle": "الأسئلة الشائعة",
+  "faq1Question": "كيف أضع عرضاً؟",
+  "faq1Answer": "افتح أي إعلان مزاد مباشر واضغط على زر «تقديم عرض». أدخل مبلغاً أعلى من أعلى عرض حالي وأكّد. يُرسَل عرضك فوراً.",
+  "faq2Question": "هل يمكنني إلغاء عرض بعد تقديمه؟",
+  "faq2Answer": "العروض ملزِمة بمجرد تقديمها ولا يمكن إلغاؤها. يرجى مراجعة تفاصيل الإعلان بعناية قبل المزايدة.",
+  "faq3Question": "كيف أبيع منتجاً على مزاد؟",
+  "faq3Answer": "اذهب إلى تبويب البيع، أدخل تفاصيل الإعلان بما في ذلك العنوان والفئة والسعر الابتدائي وتواريخ المزاد، ثم أرسل. سيُراجَع إعلانك قبل النشر.",
+  "faq4Question": "ما طرق الدفع المقبولة؟",
+  "faq4Answer": "تُتفق شروط الدفع بين المشتري والبائع بعد إغلاق المزاد. تُيسّر مزاد عملية المزاد حالياً؛ تكامل الدفع المباشر قادم قريباً.",
+  "faq5Question": "ماذا يحدث إذا فزت في مزاد؟",
+  "faq5Answer": "ستصلك إشعار عند الفوز. سيُخطَر البائع لتأكيد البيع. يمكنك بعد ذلك تنسيق التسليم والدفع من خلال شاشة تفاصيل الطلب.",
+  "faq6Question": "كيف أتحقق من هويتي (KYC)؟",
+  "faq6Answer": "اذهب إلى الملف الشخصي ← التحقق من الهوية واتبع الخطوات لرفع وثيقة هويتك. تستغرق المراجعة عادةً 1-2 يوم عمل.",
+  "faq7Question": "كيف أفتح نزاعاً؟",
+  "faq7Answer": "إذا كانت لديك مشكلة مع مزاد مكتمل، اذهب إلى الملف الشخصي ← نزاعاتي واضغط على «الإبلاغ عن نزاع». قدّم وصفاً واضحاً وسيراجعه فريقنا خلال 3 أيام عمل.",
+  "faq8Question": "كيف أحذف حسابي؟",
+  "faq8Answer": "تواصل مع فريق الدعم على projectestingemail@gmail.com واطلب حذف الحساب. سنعالج الأمر خلال 7 أيام عمل وفقاً للأنظمة المعمول بها لحماية البيانات.",
+
+  "liveAuctionEndedLabel": "انتهى المزاد",
+  "liveAuctionLiveLabel": "مباشر",
+  "reconnecting": "جارٍ إعادة الاتصال…",
+  "connectionLostRetry": "انقطع الاتصال — اضغط لإعادة المحاولة",
+  "endingSoon": "ينتهي قريباً",
+  "calculatingResultLabel": "جارٍ حساب النتيجة…",
+  "waitingForFirstBid": "في انتظار أول عرض…",
+  "recentBids": "آخر العروض",
+  "couldntReachServer": "تعذّر الوصول إلى الخادم",
+  "checkConnectionRetry": "تحقق من اتصالك وحاول مرة أخرى.",
+  "youWon": "لقد فزت",
+  "auctionEndedHeadline": "انتهى المزاد",
+  "reserveNotMet": "لم يُبلَغ سعر الاحتياطي",
+  "calculatingResultHeadline": "جارٍ حساب النتيجة",
+  "finalPriceLabel": "السعر النهائي: {amount}",
+  "@finalPriceLabel": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "soldToOther": "بيع لـ {bidder} · {amount}",
+  "@soldToOther": {
+    "placeholders": {
+      "bidder": { "type": "String" },
+      "amount": { "type": "String" }
+    }
+  },
+  "awaitingSellerDecision": "بانتظار قرار البائع",
+  "noBidsMetReserve": "لم يصل أي عرض إلى سعر الاحتياطي",
+  "youreLeading": "أنت في الصدارة",
+  "youveBeenOutbid": "تم تجاوز عرضك  ·  {bidder} في الصدارة",
+  "@youveBeenOutbid": {
+    "placeholders": {
+      "bidder": { "type": "String" }
+    }
+  },
+  "noBidsYet": "لا عروض بعد",
+  "loadingBidButton": "جارٍ التحميل…",
+  "bidButton": "عرض {amount}",
+  "@bidButton": {
+    "placeholders": {
+      "amount": { "type": "String" }
+    }
+  },
+  "networkError": "خطأ في الشبكة — يرجى المحاولة مرة أخرى.",
+
+  "addPhotos": "إضافة صور",
+  "listingPhotosTitle": "صور الإعلان",
+  "listingPhotosSubtitle": "أضف حتى 5 صور. ستكون الصورة الأولى هي الصورة المصغرة للإعلان.",
+  "addPhotoButton": "إضافة صورة",
+  "skipPhotos": "تخطي",
+  "uploadPhotos": "رفع الصور",
+  "uploadingPhotoProgress": "جارٍ رفع {current} من {total}…",
+  "@uploadingPhotoProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "photoUploadDone": "تمت إضافة الصور إلى إعلانك.",
+  "maxPhotosReached": "وصلت إلى الحد الأقصى البالغ 5 صور."
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+venv/
+.venv/
+env/
+db.sqlite3
+media/
+.env
+*.log
+ws_frames.txt
+ws_listener_output.txt
