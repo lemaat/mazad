@@ -8,6 +8,7 @@ import '../../../core/theme/typography.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../auth/presentation/auth_controller.dart';
 import '../../auth/presentation/login_screen.dart';
+import '../../bidding/domain/bid_event.dart';
 import '../../bidding/presentation/live_auction_screen.dart';
 import '../../favorites/presentation/favorite_button.dart';
 import '../../sell/data/sell_repository.dart';
@@ -164,20 +165,36 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
 
       // 4. Proceed to live auction.
       if (!mounted) return;
+      final myBidderLabel =
+          widget.controller.username ?? widget.controller.bidderNumber!;
+      // Seed "Recent bids" from the REST bid history (server's top_bids)
+      // rather than leaving it empty — otherwise it only shows whatever
+      // bids happen to land while THIS socket connection is open, so
+      // bids placed by other accounts (or by you, before switching
+      // accounts on the same device) would look like they never happened.
+      final initialBids = (_detail?.topBids ?? const [])
+          .take(3)
+          .map((b) => BidEvent(
+                bidderNumber: b.bidderLabel,
+                amount: b.amount,
+                timestamp: b.createdAt,
+                isCurrentUser: b.bidderLabel == myBidderLabel,
+              ))
+          .toList();
       Navigator.push(
         context,
         MaterialPageRoute(
           builder: (_) => LiveAuctionScreen(
             listingId: widget.summary.id,
             authToken: widget.controller.token!,
-            myBidderLabel:
-                widget.controller.username ?? widget.controller.bidderNumber!,
+            myBidderLabel: myBidderLabel,
             myBidderNumber: widget.controller.bidderNumber!,
             listingTitle: _detail?.title ?? widget.summary.title,
             categoryName: widget.summary.category.name,
             listingImageUrl: (_detail != null && _detail!.imageUrls.isNotEmpty)
                 ? _detail!.imageUrls.first
                 : widget.summary.primaryImageUrl,
+            initialRecentBids: initialBids,
             host: AppConfig.host,
           ),
         ),
@@ -205,9 +222,17 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isLive = widget.summary.status == 'live';
-    final isScheduled = widget.summary.status == 'scheduled';
-    final isPendingDecision = widget.summary.status == 'pending_seller_decision';
+    // Prefer the freshly-fetched detail's status over widget.summary.status
+    // (a snapshot frozen at the moment this screen was opened, from
+    // whichever list card was tapped) — otherwise an action taken on this
+    // screen (End Unsold, accept second chance, ...) updates `_detail` but
+    // the bottom decision bar keeps showing as if nothing happened, and a
+    // second tap on "End Unsold" gets rejected by the server with "Listing
+    // is not pending a seller decision" instead of the button just vanishing.
+    final status = _detail?.status ?? widget.summary.status;
+    final isLive = status == 'live';
+    final isScheduled = status == 'scheduled';
+    final isPendingDecision = status == 'pending_seller_decision';
 
     return Scaffold(
       appBar: AppBar(
@@ -273,9 +298,9 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
 
     return SingleChildScrollView(
       padding: EdgeInsets.only(
-        bottom: (widget.summary.status == 'live' ||
-                widget.summary.status == 'scheduled' ||
-                widget.summary.status == 'pending_seller_decision')
+        bottom: (d.status == 'live' ||
+                d.status == 'scheduled' ||
+                d.status == 'pending_seller_decision')
             ? 96
             : 24,
       ),
@@ -649,9 +674,11 @@ class _ListingDetailScreenState extends State<ListingDetailScreen> {
               children: [
                 const Icon(Icons.gavel_rounded, size: 18, color: AppColors.warning),
                 const SizedBox(width: 8),
-                Text(
-                  l10n.auctionEndedDecisionRequired,
-                  style: AppTypography.body.copyWith(color: AppColors.neutralDark, fontWeight: FontWeight.w600),
+                Expanded(
+                  child: Text(
+                    l10n.auctionEndedDecisionRequired,
+                    style: AppTypography.body.copyWith(color: AppColors.neutralDark, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ],
             ),

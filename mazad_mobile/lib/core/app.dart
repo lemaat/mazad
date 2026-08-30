@@ -9,7 +9,7 @@ import '../main.dart' show kFirebaseAvailable;
 import 'config/app_config.dart';
 import 'locale/locale_controller.dart';
 import 'network/token_storage.dart';
-import 'presentation/splash_screen.dart';
+import 'theme/colors.dart';
 import 'theme/theme.dart';
 import 'theme/theme_controller.dart';
 import '../features/auth/data/auth_repository.dart';
@@ -52,8 +52,12 @@ class _MazadAppState extends State<MazadApp> {
   final _localeController = LocaleController();
   late final AuthController _authController;
   late final ListingRepository _listingRepository;
-  bool _showSplash = true;
   bool _showOnboarding = false;
+  // Stays false only for the brief moment it takes to read the
+  // has-seen-onboarding flag from disk, so the very first frame doesn't
+  // flash NavShell before onboarding kicks in. No separate splash step —
+  // just avoids a one-frame flicker while that async read resolves.
+  bool _ready = false;
   String? _previousToken;
 
   @override
@@ -78,7 +82,11 @@ class _MazadAppState extends State<MazadApp> {
 
   Future<void> _checkOnboarding() async {
     final seen = await hasSeenOnboarding();
-    if (mounted && !seen) setState(() => _showOnboarding = true);
+    if (!mounted) return;
+    setState(() {
+      _showOnboarding = !seen;
+      _ready = true;
+    });
   }
 
   @override
@@ -167,10 +175,6 @@ class _MazadAppState extends State<MazadApp> {
     }
   }
 
-  void _onSplashComplete() {
-    if (mounted) setState(() => _showSplash = false);
-  }
-
   void _onOnboardingDone() {
     if (mounted) setState(() => _showOnboarding = false);
   }
@@ -194,8 +198,11 @@ class _MazadAppState extends State<MazadApp> {
               locale: locale,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
-              home: _showSplash
-                  ? SplashScreen(onComplete: _onSplashComplete)
+              home: !_ready
+                  // Matches the native launch_background color so this
+                  // reads as a continuation of the OS cold-start screen,
+                  // not a second branded splash step.
+                  ? const Scaffold(backgroundColor: AppColors.accentYellow)
                   : _showOnboarding
                       ? OnboardingScreen(onDone: _onOnboardingDone)
                       : NavShell(

@@ -7,6 +7,7 @@ import '../../../core/theme/typography.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../auth/presentation/auth_controller.dart';
 import '../../listings/data/listing_repository.dart';
+import '../../listings/presentation/listing_detail_screen.dart';
 import '../../orders/presentation/order_tracking_screen.dart';
 import '../data/sell_repository.dart';
 import 'listing_photos_screen.dart';
@@ -215,7 +216,13 @@ class _ListingRow extends StatelessWidget {
         : l10n.priceFrom(_fmtCurrency(price));
 
     final isSold = listing.status == 'ended_sold';
-    final isPhotoEligible = const {'pending_payment', 'scheduled', 'pending_seller_decision'}
+    final isPendingDecision = listing.status == 'pending_seller_decision';
+    // 'pending_seller_decision' used to be lumped in with the photo-upload
+    // shortcut below (isPhotoEligible) by mistake — a listing that closed
+    // below reserve has nothing to do with adding photos; it needs the
+    // seller's End Unsold / Offer Second Chance decision, which only
+    // ListingDetailScreen's bottom bar exposes.
+    final isPhotoEligible = const {'pending_payment', 'scheduled'}
         .contains(listing.status);
     return GestureDetector(
       onTap: isSold
@@ -231,6 +238,17 @@ class _ListingRow extends StatelessWidget {
                   ),
                 ),
               )
+          : isPendingDecision
+              ? () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ListingDetailScreen(
+                        summary: listing,
+                        controller: controller,
+                        repository: repository,
+                      ),
+                    ),
+                  )
           : isPhotoEligible
               ? () => Navigator.push(
                     context,

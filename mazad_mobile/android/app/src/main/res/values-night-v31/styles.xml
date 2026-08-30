@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark-mode counterpart of values-v31/styles.xml — see that file for
+         why these attributes are needed. Kept on the same yellow brand
+         background as the light variant (matches the existing dark-mode
+         launch_background, which already uses splash_yellow too). -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_yellow</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/splash_yellow</item>
+    </style>
+    <style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

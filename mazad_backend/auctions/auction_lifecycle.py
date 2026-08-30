@@ -216,7 +216,13 @@ def _close_as_sold(listing, stdout=None):
 # ── Expired second-chance offers ────────────────────────────────────────────
 
 def _expire_second_chance_offers(now, stdout=None):
-    expired = (
+    """A second-chance offer nobody accepted within its 10-minute window
+    auto-closes the listing as unsold, releasing every deposit — the
+    seller already made their call by choosing to offer a second chance
+    rather than end it themselves, so leaving it sitting in
+    pending_seller_decision indefinitely (waiting on a second decision
+    that may never come) just locks deposits with no path forward."""
+    expired = list(
         Sale.objects.filter(
             status=Sale.Status.PENDING_DECISION,
             second_chance_deadline__isnull=False,
@@ -226,13 +232,23 @@ def _expire_second_chance_offers(now, stdout=None):
     )
     count = 0
     for sale in expired:
-        sale.second_chance_deadline = None
-        sale.save(update_fields=['second_chance_deadline'])
+        with transaction.atomic():
+            listing = Listing.objects.select_for_update().get(pk=sale.listing_id)
+            # Re-check under the lock — the seller may have resolved this
+            # themselves (End Unsold / the runner-up accepting) between the
+            # query above and this loop iteration.
+            if listing.status != Listing.Status.PENDING_SELLER_DECISION:
+                continue
+            listing.status = Listing.Status.ENDED_UNSOLD
+            listing.save(update_fields=['status', 'updated_at'])
+            listing.release_deposits()
+            sale.second_chance_deadline = None
+            sale.save(update_fields=['second_chance_deadline'])
         notify(
             recipient=sale.seller,
             notification_type=Notification.Type.SECOND_CHANCE_EXPIRED,
-            title='Second-chance offer expired',
-            body=f'No one accepted the second-chance offer for "{sale.listing.title}". You can still end it as unsold.',
+            title='Auction ended unsold',
+            body=f'No one took the second-chance offer for "{sale.listing.title}", so it has automatically closed as unsold and all deposits have been released.',
             data={
                 'listing_id': str(sale.listing_id),
                 'listing_title': sale.listing.title,
@@ -240,4 +256,4 @@ def _expire_second_chance_offers(now, stdout=None):
         )
         count += 1
     if count and stdout:
-        stdout.write(f"Expired {count} second-chance offer(s).")
+        stdout.write(f"Auto-closed {count} expired second-chance offer(s) as unsold.")

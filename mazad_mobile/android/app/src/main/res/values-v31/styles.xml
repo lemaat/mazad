@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 12+ (API 31+) always shows its own system splash screen at
+         cold start, independent of anything Flutter draws. Without these
+         attributes, the OS falls back to its own default: the app icon
+         centered inside a white circular backdrop — that's the white ring
+         reported, not a bug in the app's own (already-removed) splash
+         widget or in the launcher icon itself.
+
+         Matching windowSplashScreenIconBackgroundColor to the background
+         color makes that circle visually disappear (same color as the
+         screen behind it), and because the icon's own yellow fill is the
+         same color too, only the blue gavel mark reads on screen — a
+         plain yellow flash with the mark, no visible white circle, no
+         separate "splash step." -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="android:windowSplashScreenBackground">@color/splash_yellow</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/splash_yellow</item>
+    </style>
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

@@ -37,6 +37,7 @@ class LiveAuctionScreen extends StatefulWidget {
     required this.listingTitle,
     required this.categoryName,
     this.listingImageUrl,
+    this.initialRecentBids = const [],
     this.host = 'localhost',
     this.port = 8000,
   });
@@ -53,6 +54,11 @@ class LiveAuctionScreen extends StatefulWidget {
   final String categoryName;
   /// The real listing's primary photo URL, if it has one.
   final String? listingImageUrl;
+  /// Bid history from the REST listing detail (server's `top_bids`), so
+  /// "Recent bids" isn't empty just because this device's socket wasn't
+  /// connected yet when those bids were placed — e.g. after switching
+  /// accounts on the same emulator and rejoining a room mid-auction.
+  final List<BidEvent> initialRecentBids;
   final String host;
   final int port;
 
@@ -75,7 +81,7 @@ class _LiveAuctionScreenState extends State<LiveAuctionScreen>
   Duration _remaining = Duration.zero;
   String _leadingBidder = '';
   bool _isLeading = false;
-  List<BidEvent> _recentBids = const [];
+  late List<BidEvent> _recentBids;
   _AuctionPhase _phase = _AuctionPhase.loading;
   ConnectionStatus _connStatus = ConnectionStatus.connecting;
   AuctionClosedEvent? _closeEvent;
@@ -85,6 +91,8 @@ class _LiveAuctionScreenState extends State<LiveAuctionScreen>
   @override
   void initState() {
     super.initState();
+
+    _recentBids = widget.initialRecentBids;
 
     _pulseController = AnimationController(
       vsync: this,

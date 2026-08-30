@@ -2,12 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../../../core/config/app_config.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../core/theme/colors.dart';
 import '../../../core/theme/typography.dart';
-import '../../../features/bidding/presentation/live_auction_screen.dart';
-import '../../listings/data/listing_repository.dart';
 import '../data/auth_repository.dart';
 import 'auth_controller.dart';
 import 'register_screen.dart';
@@ -54,19 +51,25 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _checkStoredToken() async {
-    // When pushed from another screen (onAuthenticated != null), don't
-    // auto-navigate on an existing session — the caller manages that flow.
-    if (widget.onAuthenticated != null) {
-      setState(() => _checking = false);
-      return;
-    }
     final alreadyLoggedIn = await widget.controller.initialize();
     if (!mounted) return;
     if (alreadyLoggedIn) {
-      _goToAuction();
+      _finishAuth();
       return;
     }
     setState(() => _checking = false);
+  }
+
+  /// Hand off to whoever pushed this screen: either their own
+  /// post-login callback, or (when there is none — this screen was
+  /// reached as its own destination rather than an inline sign-in
+  /// prompt) just pop back to the screen underneath, now authenticated.
+  void _finishAuth() {
+    if (widget.onAuthenticated != null) {
+      widget.onAuthenticated!();
+    } else if (mounted && Navigator.canPop(context)) {
+      Navigator.pop(context);
+    }
   }
 
   Future<void> _submit() async {
@@ -81,11 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
         password: _passwordController.text,
       );
       if (!mounted) return;
-      if (widget.onAuthenticated != null) {
-        widget.onAuthenticated!();
-      } else {
-        _goToAuction();
-      }
+      _finishAuth();
     } on AuthException catch (e) {
       setState(() => _error = e.message);
     } on SocketException {
@@ -95,48 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
     } finally {
       if (mounted) setState(() => _loading = false);
     }
-  }
-
-  static const _demoListingId = '5252fa11-0e99-4863-a926-b15b530dadff';
-
-  Future<void> _goToAuction() async {
-    // This is a dev/QA shortcut that jumps straight into a fixed demo
-    // listing's auction room after login, bypassing normal browse ->
-    // detail navigation. It used to hand LiveAuctionScreen a hardcoded
-    // placeholder title/photo; now it fetches the real listing so this
-    // shortcut shows genuine data too, same as the normal flow.
-    String? title;
-    String? categoryName;
-    String? imageUrl;
-    try {
-      final detail = await ListingRepository(host: AppConfig.host).fetchDetail(
-        _demoListingId,
-        token: widget.controller.token,
-      );
-      title = detail.title;
-      categoryName = detail.category.name;
-      imageUrl = detail.imageUrls.isNotEmpty ? detail.imageUrls.first : null;
-    } catch (_) {
-      // Listing may not exist (e.g. fresh DB before seeding) — fall back
-      // to a generic label rather than crashing this dev shortcut.
-    }
-    if (!mounted) return;
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (_) => LiveAuctionScreen(
-          listingId: _demoListingId,
-          authToken: widget.controller.token!,
-          myBidderLabel:
-              widget.controller.username ?? widget.controller.bidderNumber!,
-          myBidderNumber: widget.controller.bidderNumber!,
-          listingTitle: title ?? 'Live Auction',
-          categoryName: categoryName ?? '',
-          listingImageUrl: imageUrl,
-          host: AppConfig.host,
-        ),
-      ),
-    );
   }
 
   @override

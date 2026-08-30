@@ -73,6 +73,22 @@ class ListingSummary {
       );
 }
 
+/// One entry from a listing's `top_bids` — the bid history the server
+/// already tracks, independent of whoever happens to have the live
+/// auction room's WebSocket open right now.
+class TopBid {
+  const TopBid({required this.bidderLabel, required this.amount, required this.createdAt});
+  final String bidderLabel;
+  final int amount;
+  final DateTime createdAt;
+
+  factory TopBid.fromJson(Map<String, dynamic> d) => TopBid(
+        bidderLabel: (d['bidder_display'] as Map<String, dynamic>)['label'] as String,
+        amount: _price(d['amount'] as String),
+        createdAt: DateTime.parse(d['created_at'] as String).toLocal(),
+      );
+}
+
 class ListingDetail {
   const ListingDetail({
     required this.id,
@@ -90,6 +106,7 @@ class ListingDetail {
     this.imageUrls = const [],
     this.saleInfo,
     this.isFavorited = false,
+    this.topBids = const [],
   });
 
   final String id;
@@ -107,6 +124,7 @@ class ListingDetail {
   final List<String> imageUrls;
   final SaleInfo? saleInfo;
   final bool isFavorited;
+  final List<TopBid> topBids;
 
   factory ListingDetail.fromJson(Map<String, dynamic> d) => ListingDetail(
         id: d['id'] as String,
@@ -131,6 +149,11 @@ class ListingDetail {
             ? SaleInfo.fromJson(d['sale'] as Map<String, dynamic>)
             : null,
         isFavorited: d['is_favorited'] as bool? ?? false,
+        topBids: d['top_bids'] != null
+            ? (d['top_bids'] as List)
+                .map((e) => TopBid.fromJson(e as Map<String, dynamic>))
+                .toList()
+            : const [],
       );
 }
 

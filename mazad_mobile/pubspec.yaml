@@ -56,7 +56,18 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
+  # image_path is the flat, full-bleed square (yellow background, no padding)
+  # used for iOS/web/windows and as the pre-Android-8 fallback icon.
   image_path: "assets/icon/mazad_icon.png"
+  # Android 8+ (API 26+) adaptive icon: a solid-color background layer plus a
+  # transparent-background foreground layer, composited and masked by the OS
+  # (circle, squircle, rounded-square, teardrop — whichever the launcher
+  # uses). Without this, flutter_launcher_icons falls back to cropping the
+  # flat square image_path into a circle for round-icon variants, which is
+  # what showed the icon's padding as a white ring around a smaller badge.
+  # With this, there's no padding to show through on any launcher shape.
+  adaptive_icon_background: "#FFC42D"
+  adaptive_icon_foreground: "assets/icon/mazad_icon_foreground.png"
   web:
     generate: true
     image_path: "assets/icon/mazad_icon.png"

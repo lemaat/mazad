@@ -75,7 +75,10 @@ class _AuthGate extends StatelessWidget {
                   onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => LoginScreen(controller: controller),
+                      builder: (_) => LoginScreen(
+                        controller: controller,
+                        onAuthenticated: () => Navigator.pop(context),
+                      ),
                     ),
                   ),
                   child: Text(l10n.signIn),

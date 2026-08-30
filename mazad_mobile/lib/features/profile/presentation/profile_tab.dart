@@ -523,7 +523,10 @@ class _AuthButtons extends StatelessWidget {
           onPressed: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => LoginScreen(controller: controller),
+              builder: (_) => LoginScreen(
+                controller: controller,
+                onAuthenticated: () => Navigator.pop(context),
+              ),
             ),
           ),
           child: Text(l10n.signIn),
@@ -533,7 +536,10 @@ class _AuthButtons extends StatelessWidget {
           onPressed: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => RegisterScreen(controller: controller),
+              builder: (_) => RegisterScreen(
+                controller: controller,
+                onAuthenticated: () => Navigator.pop(context),
+              ),
             ),
           ),
           child: Text(l10n.createAccount),

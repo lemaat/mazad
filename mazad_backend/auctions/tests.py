@@ -652,7 +652,11 @@ class SecondChanceMoneyTest(APITestCase):
         self.assertEqual(sale.status, Sale.Status.AWAITING_PAYMENT)
         self.assertEqual(sale.buyer, self.bidder2)
 
-    def test_expired_offer_listing_stays_pending_decision(self):
+    def test_expired_offer_auto_closes_unsold(self):
+        # If nobody takes the second-chance offer within its window, the
+        # listing auto-resolves as unsold rather than sitting in
+        # pending_seller_decision forever waiting on a seller who may
+        # never come back to it.
         self._offer()
         sale = self.listing.sale
         sale.second_chance_deadline = timezone.now() - timezone.timedelta(minutes=1)
@@ -660,7 +664,17 @@ class SecondChanceMoneyTest(APITestCase):
 
         _run_close_command()   # triggers _expire_second_chance_offers
         self.listing.refresh_from_db()
-        self.assertEqual(self.listing.status, Listing.Status.PENDING_SELLER_DECISION)
+        self.assertEqual(self.listing.status, Listing.Status.ENDED_UNSOLD)
+
+    def test_expired_offer_releases_all_deposits(self):
+        self._offer()
+        sale = self.listing.sale
+        sale.second_chance_deadline = timezone.now() - timezone.timedelta(minutes=1)
+        sale.save(update_fields=['second_chance_deadline'])
+
+        _run_close_command()
+        for deposit in Deposit.objects.filter(listing=self.listing):
+            self.assertEqual(deposit.status, Deposit.Status.RELEASED)
 
     def test_expired_offer_sale_buyer_unchanged(self):
         self._offer()
