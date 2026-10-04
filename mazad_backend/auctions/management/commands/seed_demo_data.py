@@ -79,6 +79,17 @@ User = get_user_model()
 # Phone numbers used by demo accounts — used to scope --clear deletions.
 _DEMO_PHONES = ['22001001', '22001002', '22002001', '22002002', '22002003', '22003001']
 
+# How long the two live demo auctions stay live after seeding, and how far in
+# the future the scheduled land auction starts. Long enough to cover a full
+# week of testing plus the pitch without anything auto-closing. Change this
+# one value to shorten or lengthen every demo timing at once.
+DEMO_WINDOW_DAYS = 10
+
+# The real second-chance window (matches offer_second_chance in views.py).
+# Re-run the seed right before demoing the Nissan second-chance flow: once
+# this lapses, auction_lifecycle auto-closes the listing as unsold.
+SECOND_CHANCE_MINUTES = 10
+
 
 class Command(BaseCommand):
     help = "Populate the database with demo data (DEBUG=True only)."
@@ -157,18 +168,21 @@ class Command(BaseCommand):
     def _seed_categories(self):
         cars, _ = Category.objects.get_or_create(
             slug='cars',
-            defaults=dict(name='Used Cars', listing_fee='500.00',
-                          commission_rate='0.035', requires_id_verification=False),
+            # Decimal, not str: on a fresh DB get_or_create returns the
+            # in-memory instance, and a str rate would make
+            # Decimal * commission_rate raise TypeError in _seed_sales.
+            defaults=dict(name='Used Cars', listing_fee=Decimal('500.00'),
+                          commission_rate=Decimal('0.035'), requires_id_verification=False),
         )
         land, _ = Category.objects.get_or_create(
             slug='land',
-            defaults=dict(name='Land', listing_fee='1000.00',
-                          commission_rate='0.025', requires_id_verification=True),
+            defaults=dict(name='Land', listing_fee=Decimal('1000.00'),
+                          commission_rate=Decimal('0.025'), requires_id_verification=True),
         )
         goods, _ = Category.objects.get_or_create(
             slug='goods',
-            defaults=dict(name='Commercial Goods', listing_fee='200.00',
-                          commission_rate='0.030', requires_id_verification=False),
+            defaults=dict(name='Commercial Goods', listing_fee=Decimal('200.00'),
+                          commission_rate=Decimal('0.030'), requires_id_verification=False),
         )
         self.stdout.write("  Categories : 3 (cars 3.5%, land 2.5%, goods 3.0%)")
         return {'cars': cars, 'land': land, 'goods': goods}
@@ -234,7 +248,7 @@ class Command(BaseCommand):
             starting_price='1500000.00', reserve_price='2000000.00',
             min_increment='10000.00', current_price='1650000.00',
             auction_start=now - timezone.timedelta(hours=2),
-            auction_end=now + timezone.timedelta(hours=1),
+            auction_end=now + timezone.timedelta(days=DEMO_WINDOW_DAYS),
             status=Listing.Status.LIVE, listing_fee_paid=True,
         ))
 
@@ -244,7 +258,7 @@ class Command(BaseCommand):
             starting_price='200000.00', reserve_price='350000.00',
             min_increment='5000.00', current_price='310000.00',
             auction_start=now - timezone.timedelta(hours=3),
-            auction_end=now + timezone.timedelta(minutes=3),
+            auction_end=now + timezone.timedelta(days=DEMO_WINDOW_DAYS),
             status=Listing.Status.LIVE, listing_fee_paid=True,
         ))
 
@@ -253,8 +267,8 @@ class Command(BaseCommand):
             description='Plot 500 sqm in Tevragh-Zeina residential zone. Full title deed.',
             starting_price='5000000.00', reserve_price='7000000.00',
             min_increment='50000.00', current_price=None,
-            auction_start=now + timezone.timedelta(hours=24),
-            auction_end=now + timezone.timedelta(hours=48),
+            auction_start=now + timezone.timedelta(days=DEMO_WINDOW_DAYS),
+            auction_end=now + timezone.timedelta(days=DEMO_WINDOW_DAYS + 1),
             status=Listing.Status.SCHEDULED, listing_fee_paid=True,
         ))
 
@@ -379,8 +393,9 @@ class Command(BaseCommand):
             # Pending decision — held until seller decides
             (u['buyer1'], L['pending_decision'], '52000.00', Deposit.Status.ACTIVE),
             (u['buyer2'], L['pending_decision'], '52000.00', Deposit.Status.ACTIVE),
-            # Ended sold — winner's deposit stays ACTIVE until payment confirmed
-            (u['buyer2'], L['ended_sold'],       '23500.00', Deposit.Status.ACTIVE),
+            # Ended sold — sale is PAID, and Sale.mark_paid() releases the
+            # winner's deposit, so all three are released
+            (u['buyer2'], L['ended_sold'],       '23500.00', Deposit.Status.RELEASED),
             (u['buyer1'], L['ended_sold'],       '22000.00', Deposit.Status.RELEASED),
             (u['buyer3'], L['ended_sold'],       '21000.00', Deposit.Status.RELEASED),
             # Ended unsold — all released
@@ -400,32 +415,43 @@ class Command(BaseCommand):
     # ── Sales ─────────────────────────────────────────────────────────────────
 
     def _seed_sales(self, now, L, u, cats):
+        # Mirrors the state right after the seller calls offer_second_chance:
+        # the Sale still records the original top bidder (buyer2 @ 520k) —
+        # accept_second_chance is what swaps in the runner-up (buyer1 @ 510k,
+        # derived from the bids) — and only the deadline is set.
         pending_sale, _ = Sale.objects.get_or_create(
             listing=L['pending_decision'],
             defaults=dict(
                 buyer=u['buyer2'],
                 seller=u['seller2'],
-                final_price='520000.00',
+                final_price=Decimal('520000.00'),
                 commission_amount=Decimal('520000.00') * cats['cars'].commission_rate,
                 status=Sale.Status.PENDING_DECISION,
-                second_chance_deadline=now + timezone.timedelta(hours=4),
+                second_chance_deadline=now + timezone.timedelta(minutes=SECOND_CHANCE_MINUTES),
             ),
         )
 
+        # Full happy path up to delivery: paid -> address set -> shipped ->
+        # received. mark_shipped requires PAID + a delivery address, so the
+        # old AWAITING_PAYMENT-but-shipped combination was impossible.
+        buyer2_home = Address.objects.get(user=u['buyer2'], label='Home')
         sold_sale, _ = Sale.objects.get_or_create(
             listing=L['ended_sold'],
             defaults=dict(
                 buyer=u['buyer2'],
                 seller=u['seller1'],
-                final_price='235000.00',
+                final_price=Decimal('235000.00'),
                 commission_amount=Decimal('235000.00') * cats['goods'].commission_rate,
-                status=Sale.Status.AWAITING_PAYMENT,
-                shipped_at=now - timezone.timedelta(days=2),
+                status=Sale.Status.PAID,
+                delivery_address=buyer2_home,
+                shipped_at=now - timezone.timedelta(days=3),
+                delivered_at=now - timezone.timedelta(days=1),
                 tracking_note='DHL Express — MR12345678',
             ),
         )
 
-        self.stdout.write("  Sales      : 2 (1 pending-decision with second-chance, 1 awaiting-payment shipped)")
+        self.stdout.write("  Sales      : 2 (1 second-chance offered to runner-up, "
+                          "1 paid, shipped and delivered)")
         return dict(pending=pending_sale, sold=sold_sale)
 
     # ── Favorites ─────────────────────────────────────────────────────────────
@@ -485,20 +511,27 @@ class Command(BaseCommand):
              "Decision required",
              f'Your auction for "{L["pending_decision"].title}" ended below reserve. '
              'Choose to offer a second chance or end unsold.',
-             {'listing_id': str(L['pending_decision'].id)}, False),
+             # Read: the seller already acted on it by offering a second chance.
+             {'listing_id': str(L['pending_decision'].id)}, True),
 
-            (u['buyer2'], T.SECOND_CHANCE_RECEIVED,
-             "Second-chance offer",
-             f'The seller is offering you a second chance on "{L["pending_decision"].title}" '
-             'for 520,000 MRU.',
-             {'listing_id': str(L['pending_decision'].id), 'amount': '520000.00'}, False),
+            # Goes to the runner-up (buyer1 @ 510k), with the same title/body
+            # and data keys offer_second_chance sends in views.py.
+            (u['buyer1'], T.SECOND_CHANCE_RECEIVED,
+             "Second chance offer!",
+             f'You\'ve been offered a second chance on "{L["pending_decision"].title}". '
+             f'Expires in {SECOND_CHANCE_MINUTES} minutes.',
+             {'listing_id': str(L['pending_decision'].id),
+              'listing_title': L['pending_decision'].title,
+              'offer_price': '510000.00',
+              'deadline': sales['pending'].second_chance_deadline.isoformat()}, False),
 
             (u['buyer2'], T.DISPUTE_STATUS_CHANGED,
              "Dispute update",
              'Your dispute is now under review. Our team will contact you within 48 hours.',
              {'sale_id': str(sales['sold'].id)}, False),
 
-            (u['buyer1'], T.ORDER_SHIPPED,
+            # buyer2 won the MacBook, so the shipping notice is theirs.
+            (u['buyer2'], T.ORDER_SHIPPED,
              "Your order has been shipped",
              'The seller shipped your item. Tracking: DHL Express — MR12345678.',
              {'sale_id': str(sales['sold'].id)}, False),

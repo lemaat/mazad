@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+media/
+.env
+ws_frames.txt
+ws_listener_output.txt
